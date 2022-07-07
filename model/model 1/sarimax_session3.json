@@ -1,0 +1,63 @@
+{
+    "model_type": "SARIMAX",
+    "model_saved": "sarimax_session3.pkl",
+    "feature_used_in_exog_data": [
+        "price_fcst(DAA)",
+        "Total_Load_fcst(B0620)",
+        "Generation_fcst(B1430)",
+        "Solar_fcst(B1440)",
+        "Wind_Offshore_fcst(B1440)",
+        "Wind_Onshore_fcst(B1440)",
+        "wind_fcst(Wind_fcst)",
+        "niv_act(Balancing_NIV_fcst_3hr)",
+        "hist_fcst(Balancing_NIV_fcst_3hr)"
+    ],
+    "order_used": {
+        "p": 24,
+        "d": 0,
+        "q": 24
+    },
+    "date_split": {
+        "start": "2022-01-01",
+        "end": "2022-05-15"
+    },
+    "params": {
+        "price_fcst(DAA)": 1.2600503396242857e-06,
+        "Total_Load_fcst(B0620)": 1.1391934094717726e-05,
+        "Generation_fcst(B1430)": -9.318750016973354e-06,
+        "Solar_fcst(B1440)": -1.6394717022194527e-05,
+        "Wind_Offshore_fcst(B1440)": 4.641963460016996e-05,
+        "Wind_Onshore_fcst(B1440)": 2.9376702514127828e-05,
+        "wind_fcst(Wind_fcst)": -5.499740655068308e-05,
+        "niv_act(Balancing_NIV_fcst_3hr)": 0.00018184477812610567,
+        "hist_fcst(Balancing_NIV_fcst_3hr)": 0.000526082469150424,
+        "ar.L1": 0.523134311803879,
+        "ma.L1": 0.2714061115588563,
+        "ma.L2": 0.19429380165721646,
+        "sigma2": 0.03728492801493298
+    },
+    "input_shape": {
+        "endog_shape": [
+            6432
+        ],
+        "exog_shape": [
+            6432,
+            9
+        ]
+    },
+    "normalized_method": "standard-scaler",
+    "metrics": {
+        "AIC": -2859.3633633779477,
+        "BIC": -2771.3658328367833,
+        "MAE": 0.14951892031801586,
+        "RMSE": 0.19336494226914508
+    },
+    "pipeline_description": {
+        "step1": "Scaling by standard scaler",
+        "step2": "train_test_split_by_date",
+        "step3": [
+            "find features of main-series and exogenous-data",
+            "split_to_endog_exog"
+        ]
+    }
+}
